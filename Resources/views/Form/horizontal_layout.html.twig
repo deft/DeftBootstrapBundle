@@ -1,0 +1,41 @@
+{% block form_row %}
+    {% spaceless %}
+        <div class='control-group{{ form.vars.errors | length > 0 ? ' error' : '' }}'>
+            {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+            <div class='controls'>
+                {{ form_widget(form) }}
+                {{ form_errors(form) }}
+            </div>
+        </div>
+    {% endspaceless %}
+{% endblock form_row %}
+
+{% block form_widget_compound %}
+    {% spaceless %}
+        <fieldset {{ block('widget_container_attributes') }}>
+            {% if form.parent is empty %}
+                {{ form_errors(form) }}
+            {% endif %}
+            {{ block('form_rows') }}
+            {{ form_rest(form) }}
+        </fieldset>
+    {% endspaceless %}
+{% endblock %}
+
+{% block form_errors %}
+    {% spaceless %}
+        {% if errors|length > 0 %}
+            {% if form.parent is empty and compound %}
+                <div class='alert alert-error'>
+                    <ul class='unstyled' style='margin-bottom: 0'>
+                        {% for error in errors %}<li>{{ error.message }}</li>{% endfor %}
+                    </ul>
+                </div>
+            {% else %}
+                {% for error in errors %}
+                    <span class='help-block error'>{{ error.message }}</span>
+                {% endfor %}
+            {% endif %}
+        {% endif %}
+    {% endspaceless %}
+{% endblock form_errors %}

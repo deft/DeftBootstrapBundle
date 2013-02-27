@@ -1,0 +1,29 @@
+{
+    "name": "deft/bootstrap-bundle",
+    "description": "Bundle to integrate twitter bootstrap in symfony2",
+    "keywords": ["bootstrap", "bundle", "symfony2"],
+    "authors": [
+        {
+            "name": "Jan Kramer",
+            "email": "jan@jankramer.eu"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "symfony/framework-bundle": "~2.2"
+    },
+    "suggest": {
+        "sp/bower-bundle": "Bundle that uses Bower to manage front-end dependencies, like bootstrap"
+    },
+    "autoload": {
+        "psr-0": {
+            "Deft\\BootstrapBundle\\": ""
+        }
+    },
+    "target-dir": "Deft/BootstrapBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1-dev"
+        }
+    }
+}
