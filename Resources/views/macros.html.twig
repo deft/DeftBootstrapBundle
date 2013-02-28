@@ -8,8 +8,8 @@
             <div class='modal-body' data-loader="<p style='text-align:center'><img src='{{ asset('bundles/deftbootstrap/img/ajax-loader.gif') }}' /></p>">
             </div>
             <div class='modal-footer'>
-                <button class="btn" data-dismiss="modal" aria-hidden="true">{{ 'general.cancel' | trans }}</button>
-                <button type="submit" class="btn btn-primary">{{ 'general.save' | trans }}</button>
+                <button class="btn" data-dismiss="modal" aria-hidden="true">{{ 'general.cancel' | trans({}, 'bootstrap') }}</button>
+                <button type="submit" class="btn btn-primary">{{ 'general.save' | trans({}, 'bootstrap') }}</button>
             </div>
         </form>
     </div>
