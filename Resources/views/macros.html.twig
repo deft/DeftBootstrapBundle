@@ -14,3 +14,10 @@
         </form>
     </div>
 {% endmacro %}
+
+{% macro modal_button(path, title, target = '', class = '', icon = false) %}
+    <a href="{{ path }}" class="{{ class }}" data-toggle="modal" {{ target ? ('data-target="' ~ target ~ '"') | raw : '' }}>
+        {% if icon %}<i class='icon-{{ icon }}'></i>{% endif %}
+        {{ title }}
+    </a>
+{% endmacro %}
