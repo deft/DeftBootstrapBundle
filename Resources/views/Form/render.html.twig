@@ -3,3 +3,9 @@
 {% endif %}
 
 {{ form_widget(form) }}
+
+<script type='text/javascript'>
+$(function() {
+    $("input[data-toggle='datepicker']").datepicker({language: '{{ app.request.locale }}'});
+})
+</script>

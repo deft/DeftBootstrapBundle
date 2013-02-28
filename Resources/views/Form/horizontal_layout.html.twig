@@ -39,3 +39,8 @@
         {% endif %}
     {% endspaceless %}
 {% endblock form_errors %}
+
+{% block single_text_date_widget %}
+    {% set attr = attr|merge({'data-date-format': form.vars.date_format, 'data-toggle': 'datepicker'}) %}
+    {{ block('form_widget_simple') }}
+{% endblock %}
