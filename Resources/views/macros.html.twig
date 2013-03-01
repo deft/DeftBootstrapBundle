@@ -21,3 +21,17 @@
         {{ title }}
     </a>
 {% endmacro %}
+
+{% macro modal_button_group(title, group_class, dropdown_class, items) %}
+    <div class="btn-group {{ group_class }}">
+        <a class="btn dropdown-toggle {{ dropdown_class }}" data-toggle="dropdown" href="#">
+            {{ title }}
+            <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+        {% for item in items %}
+            <li><a href="{{ item.path }}" data-toggle="modal" data-target="{{ item.target }}">{{ item.title }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
