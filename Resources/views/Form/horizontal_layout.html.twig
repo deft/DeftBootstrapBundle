@@ -44,3 +44,18 @@
     {% set attr = attr|merge({'data-date-format': form.vars.date_format, 'data-toggle': 'datepicker'}) %}
     {{ block('form_widget_simple') }}
 {% endblock %}
+
+{% block choice_widget_expanded %}
+    {% spaceless %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class|default('') ~ ' ' ~ (multiple ? 'checkbox' : 'radio'))}) %}
+        {% set label_attr = label_attr|merge({'class': (label_attr.class ~ ' ' ~ (inline is defined and inline ? 'inline' : ''))|trim}) %}
+        <div {{ block('widget_container_attributes') }}>
+            {% for child in form %}
+                <label{% for attrname, attrvalue in label_attr %} {{ attrname }}="{{ attrvalue }}"{% endfor %}>
+                {{ form_widget(child, {'attr': {'class': attr.widget_class|default('')}}) }}
+                {{ child.vars.label|trans({}, translation_domain) }}
+                </label>
+            {% endfor %}
+        </div>
+    {% endspaceless %}
+{% endblock choice_widget_expanded %}

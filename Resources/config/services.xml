@@ -8,5 +8,9 @@
         <service id="deft_bootstrap.form.type.single_text_date" class="Deft\BootstrapBundle\Form\Type\SingleTextDateType">
             <tag name="form.type" alias="single_text_date" />
         </service>
+
+        <service id="deft_bootstrap.form.type_extension.choice" class="Deft\BootstrapBundle\Form\Extension\BootstrapChoiceExtension">
+            <tag name="form.type_extension" alias="choice" />
+        </service>
     </services>
 </container>
