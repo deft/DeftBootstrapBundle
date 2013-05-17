@@ -2,8 +2,11 @@ $(function () {
     $("body").on("submit", ".modal form", function (event) {
         event.preventDefault();
 
+        var submitData = $(this).serialize();
         var modalBody = $('.modal-body', $(this));
-        $.post($(this).attr('action'), $(this).serialize())
+        modalBody.html(modalBody.data('loader'));
+
+        $.post($(this).attr('action'), submitData)
             .done(function (jqXhr) {
                 window.location.reload();
             })
