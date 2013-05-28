@@ -12,5 +12,9 @@
         <service id="deft_bootstrap.form.type_extension.choice" class="Deft\BootstrapBundle\Form\Extension\BootstrapChoiceExtension">
             <tag name="form.type_extension" alias="choice" />
         </service>
+
+        <service id="deft_bootstrap.form.type_extension" class="Deft\BootstrapBundle\Form\Extension\BootstrapHelpExtension">
+            <tag name="form.type_extension" alias="form" />
+        </service>
     </services>
 </container>

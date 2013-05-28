@@ -4,6 +4,15 @@
             {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
             <div class='controls'>
                 {{ form_widget(form) }}
+
+                {% if form.vars.help_inline is not empty %}
+                    <span class="help-inline">{{ form.vars.help_inline }}</span>
+                {% endif %}
+
+                {% if form.vars.help_block is not empty %}
+                    <span class="help-block">{{ form.vars.help_block }}</span>
+                {% endif %}
+
                 {{ form_errors(form) }}
             </div>
         </div>
