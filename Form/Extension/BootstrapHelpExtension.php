@@ -17,7 +17,10 @@ class BootstrapHelpExtension extends AbstractTypeExtension
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(['help_inline' => '', 'help_block' => '']);
-        $resolver->setAllowedTypes(['help_inline' => 'string', 'help_block' => 'string']);
+        $resolver->setAllowedTypes([
+            'help_inline' => ['null', 'string'],
+            'help_block' => ['null', 'string']
+        ]);
     }
 
     public function buildView(FormView $view, FormInterface $form, array $options)
