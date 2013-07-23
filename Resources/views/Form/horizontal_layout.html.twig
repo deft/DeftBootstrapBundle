@@ -50,6 +50,27 @@
     <span class="help-block">{{ form.vars.help_block }}</span>
 {% endblock %}
 
+{% block composite_row %}
+    <div class='control-group{{ form.vars.errors | length > 0 ? ' error' : '' }}'>
+        {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+        <div class="controls composite {{ form.vars.attr.class | default('') }}">
+            {% for field in form.children %}
+                {{ form_widget(field, {
+                    'attr': {
+                        'class': (field.vars.errors | length > 0 ? 'error ' : '')
+                            ~ (field.vars.attr.class | default(''))
+                    }
+                }) }}
+            {% endfor %}
+
+            {{ block('help_inline') }}
+            {{ block('help_block') }}
+
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock %}
+
 {% block money_widget %}
     <div class='input-prepend'>
         <span class='add-on'>&euro;</span>
