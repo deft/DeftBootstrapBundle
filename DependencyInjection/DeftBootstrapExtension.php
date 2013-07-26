@@ -22,6 +22,8 @@ class DeftBootstrapExtension extends Extension implements PrependExtensionInterf
             return;
         }
 
-        $container->prependExtensionConfig('sp_bower', ['bundles' => ['DeftBootstrapBundle' => null]]);
+        $container->prependExtensionConfig('sp_bower', [
+            'bundles' => ['DeftBootstrapBundle' => ['json_file' => 'bower.json']]
+        ]);
     }
 }

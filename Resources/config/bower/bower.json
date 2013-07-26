@@ -1,4 +1,5 @@
 {
+    "name": "deft-bootstrap-bundle",
     "dependencies": {
         "bootstrap": "~2.3.0",
         "bootstrap-datepicker": "latest",
