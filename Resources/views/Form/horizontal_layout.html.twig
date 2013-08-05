@@ -61,7 +61,7 @@
             {% for field in form.children %}
                 {{ form_widget(field, {
                     'attr': {
-                        'class': (field.vars.errors | length > 0 ? 'error ' : '')
+                        'class': ((field.vars.errors | default([])) | length > 0 ? 'error ' : '')
                             ~ (field.vars.attr.class | default(''))
                     }
                 }) }}
@@ -71,6 +71,14 @@
             {{ block('help_block') }}
 
             {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block button_row %}
+    <div class='control-group'>
+        <div class='controls'>
+            {{ form_widget(form, {'attr': {'class': 'btn'}}) }}
         </div>
     </div>
 {% endblock %}

@@ -10,7 +10,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "symfony/framework-bundle": "~2.2"
+        "symfony/framework-bundle": "~2.3"
     },
     "suggest": {
         "sp/bower-bundle": "Bundle that uses Bower to manage front-end dependencies, like bootstrap"
@@ -23,7 +23,7 @@
     "target-dir": "Deft/BootstrapBundle",
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1-dev"
+            "dev-master": "0.2-dev"
         }
     }
 }
