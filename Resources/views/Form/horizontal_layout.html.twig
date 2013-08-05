@@ -43,11 +43,11 @@
 {% endblock form_errors %}
 
 {% block help_inline %}
-    <span class="help-inline">{{ form.vars.help_inline }}</span>
+    {% if form.vars.help_inline %}<span class="help-inline">{{ form.vars.help_inline }}</span>{% endif %}
 {% endblock %}
 
 {% block help_block %}
-    <span class="help-block">{{ form.vars.help_block }}</span>
+    {% if form.vars.help_block %}<span class="help-block">{{ form.vars.help_block }}</span>{% endif %}
 {% endblock %}
 
 {% block composite_row %}
