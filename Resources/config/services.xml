@@ -13,7 +13,7 @@
             <tag name="form.type_extension" alias="choice" />
         </service>
 
-        <service id="deft_bootstrap.form.type_extension" class="Deft\BootstrapBundle\Form\Extension\BootstrapHelpExtension">
+        <service id="deft_bootstrap.form.type_extension.help" class="Deft\BootstrapBundle\Form\Extension\BootstrapHelpExtension">
             <tag name="form.type_extension" alias="form" />
         </service>
     </services>
