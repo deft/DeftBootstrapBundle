@@ -1,7 +1,9 @@
 {% block form_row %}
     {% spaceless %}
         <div class='control-group{{ form.vars.errors | length > 0 ? ' error' : '' }}'>
-            {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+            {% if form.vars.render_label %}
+                {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+            {% endif %}
             <div class='controls'>
                 {{ form_widget(form) }}
                 {{ form.vars.help_inline is not empty ? block('help_inline') : '' }}
@@ -52,7 +54,9 @@
 
 {% block composite_row %}
     <div class='control-group{{ form.vars.errors | length > 0 ? ' error' : '' }}'>
-        {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+        {% if form.vars.render_label %}
+            {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
+        {% endif %}
         <div class="controls composite {{ form.vars.attr.class | default('') }}">
             {% for field in form.children %}
                 {{ form_widget(field, {
