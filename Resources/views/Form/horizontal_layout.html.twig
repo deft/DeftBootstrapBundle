@@ -57,12 +57,12 @@
         {% if form.vars.render_label %}
             {{ form_label(form, null, {'label_attr': {'class': 'control-label'}}) }}
         {% endif %}
-        <div class="controls composite {{ form.vars.attr.class | default('') }}">
+        <div class="controls controls-row composite {{ form.vars.attr.class | default('') }}">
             {% for field in form.children %}
                 {{ form_widget(field, {
                     'attr': {
                         'class': ((field.vars.errors | default([])) | length > 0 ? 'error ' : '')
-                            ~ (field.vars.attr.class | default(''))
+                            ~ (field.vars.attr.class | default('span2'))
                     }
                 }) }}
             {% endfor %}
