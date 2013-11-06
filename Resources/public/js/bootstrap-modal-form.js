@@ -1,5 +1,5 @@
 $(function () {
-    $("body").on("submit", ".modal form", function (event) {
+    $("body").on("submit", ".deft-bootstrap-modal form", function (event) {
         event.preventDefault();
 
         var submitData = $(this).serialize();
