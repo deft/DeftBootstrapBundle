@@ -90,6 +90,13 @@
     </div>
 {% endblock %}
 
+{% block percent_widget %}
+    <div class='input-append'>
+        {{ form_widget(form) }}
+        <span class='add-on'>%</span>
+    </div>
+{% endblock %}
+
 {% block single_text_date_widget %}
     {% set attr = attr|merge({'data-date-format': form.vars.date_format, 'data-toggle': 'datepicker'}) %}
     {{ block('form_widget_simple') }}
