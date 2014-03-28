@@ -101,3 +101,16 @@
         </div>
     {% endspaceless %}
 {% endblock choice_widget_expanded %}
+
+{% block checkbox_row %}
+    <div class="control-group">
+        <div>
+            <label class="checkbox" for="{{ id }}">
+                {{ form_widget(form) }}
+                {% autoescape false %}{{ label }}{% endautoescape %}
+            </label>
+            {{ form_errors(form) }}
+        </div>
+    </div>
+{% endblock %}
+
