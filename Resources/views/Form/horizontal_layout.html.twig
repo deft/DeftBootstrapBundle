@@ -107,7 +107,7 @@
         <div>
             <label class="checkbox" for="{{ id }}">
                 {{ form_widget(form) }}
-                {% autoescape false %}{{ label }}{% endautoescape %}
+                {% autoescape false %}{{ label | trans({}, translation_domain) }}{% endautoescape %}
             </label>
             {{ form_errors(form) }}
         </div>
