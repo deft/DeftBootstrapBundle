@@ -1,5 +1,15 @@
 {% extends "DeftBootstrapBundle:Form:bootstrap_3_horizontal_layout.html.twig" %}
 
+{% block form_start -%}
+    {%
+        set attr = attr|merge({
+            class: (attr.class|default('') ~ ' form-horizontal')|trim,
+            novalidate: 'novalidate'
+        })
+    %}
+    {{- parent() -}}
+{%- endblock form_start %}
+
 {% block submit_widget -%}
     {% set attr = attr|merge({class: (attr.class|default('') ~ ' btn-primary')|trim}) %}
     {{- parent() -}}
