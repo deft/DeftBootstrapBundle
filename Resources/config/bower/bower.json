@@ -1,8 +1,0 @@
-{
-    "name": "deft-bootstrap-bundle",
-    "dependencies": {
-        "bootstrap": "~2.3.0",
-        "bootstrap-datepicker": "1.2.0",
-        "font-awesome": "~3.2.1"
-    }
-}

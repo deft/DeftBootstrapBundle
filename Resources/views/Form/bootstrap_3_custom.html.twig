@@ -1,0 +1,6 @@
+{% extends "DeftBootstrapBundle:Form:bootstrap_3_horizontal_layout.html.twig" %}
+
+{% block submit_widget -%}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' btn-primary')|trim}) %}
+    {{- parent() -}}
+{%- endblock %}
